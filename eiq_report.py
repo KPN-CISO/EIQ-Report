@@ -133,7 +133,7 @@ def transform(feedJSONs, feedID, options):
                 title = entity['meta']['title']
                 mapAlert(title, description, alertmap, options)
                 for extract in entity['extracts']: # Check for a known actor
-                    if extract['kind'] == 'actor':
+                    if extract['kind'] == 'actor-id':
                         actor = extract['value']
                 mapActor(actor, actormap, options)
     return(alertmap, actormap)
