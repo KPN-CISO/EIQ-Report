@@ -105,10 +105,10 @@ def read_item(feedID: int, magictoken: Optional[str]):
             feedDict = download(feedID, options)
             if feedDict:
                 mgmtstats = dict()
-                mgmtstats['actor'], mgmtstats['actormap'] = transform(feedDict, feedID, options)
+                mgmtstats['alert'], mgmtstats['actormap'] = transform(feedDict, feedID, options)
                 if mgmtstats:
-                    actortable = pd.read_json(json.dumps(mgmtstats['actor'], sort_keys=True), orient='index')
-                    actortable = actortable.reindex(columns=['count', 'title', 'description'])
+                    actortable = pd.read_json(json.dumps(mgmtstats['actormap'], sort_keys=True), orient='index')
+                    actortable = actortable.reindex(columns=['count', 'description', 'altnames'])
                     blob = io.BytesIO()
                     actortable.to_csv(blob)
                     blob.seek(0)
