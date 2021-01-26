@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+config/settings.py
+config/settings.py.kpn
+config/AlertTable.py
+config/AlertTable.py.kpn
+config/ActorTable.py
+config/ActorTable.py.kpn

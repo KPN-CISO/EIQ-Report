@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+### Structure definition of collections is through Python dictionaries
+### Alerts that do not match any of these patterns get counted as unknowns
+### Pattern matching is regex-based, meaning invalid regex will crash the script!
+
+### The script automatically creates CSVs with the appropriate row and column
+### names and contents.
+
+### AlertTable
+# AlertTable = {
+#   'collection name': {                                                // e.g. 'Malware'
+#       'title':        'short description of what collection means',   // e.g. 'Viruses, Trojans, ...'
+#       'description':  'long description of alert type',               // <OPTIONAL>
+#       'titlematch':   [ 'Virus:.*', 'Trojan:.*', ... ],               // patterns to check in titles
+#       'descmatch':    [ 'A virus has been detected ...', ... ],       // patterns to check in descriptions <OPTIONAL>
+#   },
+# }
+
+AlertTable = {
+    'Malware': {
+        'title': 'Malware, such as trojans, viruses, worms, backdoors and '
+                 'other malicious program code.',
+        'titlematch': ['Virus:', 'Trojan:', 'Backdoor:', 'Exploit:'],
+    },
+    'PUA': {
+        'title': 'Potentially Unwanted Applications',
+        'description': 'Potentially Unwanted Applications are software programs that exhibit '
+                       'behavior that is generally considered to be non-destructive, but '
+                       'undesirable for other reasons, such as collecting privacy-sensitive '
+                       'information from users. Examples include adware, browser hijackers, '
+                       'spyware and hacking tools.',
+        'titlematch': ['PUA:', 'App:', 'Misleading:', 'Program:', 'Hacktool:'],
+    },
+}

@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+### Structure definition of collections is through Python dictionaries
+### Actors that do not match any of these patterns get counted as unknowns
+
+### ActorTable <OPTIONAL>: Map group names and variants to a single name for e.g. heatmap purposes
+# ActorTable = {
+#   'APT01': {
+#       'altnames': [ 'Comment Crew', 'Comment Group', 'Comment Panda' ],
+#       'description': '...' <OPTIONAL>
+#   },
+#   'APT29': {
+#       'altnames': [ 'YTTRIUM', 'The Dukes', 'Cozy Bear', 'CozyDuke' ],
+#       'description': '...' <OPTIONAL>
+# }
+
+ActorTable = {
+    'APT01': {
+        'altnames': [ 'Comment Crew', 'Comment Group', 'Comment Panda', 'Unit 61398' ],
+        'description': 'APT1 is a Chinese threat group that has been attributed to the 2nd Bureau of the People’s Liberation Army (PLA) General Staff Department’s (GSD) 3rd Department, commonly known by its Military Unit Cover Designator (MUCD) as Unit 61398.',
+    },
+    'APT29': {
+        'altnames': [ 'YTTRIUM', 'The Dukes', 'Cozy Bear', 'CozyDuke' ],
+        'description': 'APT29 is threat group that has been attributed to the Russian government and has operated since at least 2008. This group reportedly compromised the Democratic National Committee starting in the summer of 2015.',
+    },
+    'N/A': {
+        'altnames': [ 'Unknown', 'N/A', 'None', 'Not available' ],
+        'description': 'The Threat Actor was either not known or irrelevant for the alert.',
+    },
+}

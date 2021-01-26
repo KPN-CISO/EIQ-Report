@@ -1,0 +1,48 @@
+"""
+Sample settings
+"""
+
+# Settings for notifications
+
+# If all of these variables and the send option are set, email notifications
+# will be sent to the EMAILTO address.
+#
+# EMAILSERVER           [Required] FQDN of email server to use
+# EMAILFROM             [Required] Sender address
+# EMAILTO               [Required] Recipient address
+# EMAILSUBJECT          [Required] E-mail subject
+# EMAILSEND             [Required] Send e-mails (default: False)
+# ACTORFILE             [Required] Filename for actormap
+# ALERTFILE             [Required] Filename for alertmap
+# WRITEFILES            [Required] Write files (or not)
+
+EMAILSERVER = '<your-email-server>'
+EMAILFROM = '<from-address>'
+EMAILTO = '<email-recipient>'
+EMAILSUBJECT = 'Monthly Threat Intel Report'
+EMAILSEND = False
+ACTORFILE = 'actormap.csv'
+ALERTFILE = 'alertmap.csv'
+WRITEFILES = False
+
+# Settings for EclecticIQ
+
+# Pick the right URL, e.g.: 'https://myeiq.localdomain'.
+EIQHOST = 'https://<your-eiq-host>'
+EIQFEEDS = '/open-outgoing-feed-download'
+# Pick '/api' as the EIQVERSION for EIQ <=2.0.x, and '/private' for EIQ 2.1.x+
+EIQVERSION = '/private'
+# [Required] EIQ username and password:
+EIQUSER = '<eiquser>'
+EIQPASS = '<eiqpass>'
+# [Required] EIQ 'source' UUID.
+# One username can have multiple sources where it can 'ingest data' from.
+# This 'source' can be found through the EIQ webinterface and JSON calls.
+EIQSOURCE = '<eiqsource-UUID>'
+EIQSSLVERIFY = False
+
+# Settings for FastAPI
+
+MAGICTOKEN = 's3kr1t!'      # Pick a good authtoken
+HOST = '0.0.0.0'            # Bind to all IPs
+PORT = 8080                 # Choose your port
