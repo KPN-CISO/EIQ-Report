@@ -83,7 +83,8 @@ def read_item(feedID: int, magictoken: Optional[str]):
                 mgmtstats['alertmap'], mgmtstats['actormap'] = transform(feedDict, feedID, options)
                 if mgmtstats:
                     alertmaptable = pd.read_json(json.dumps(mgmtstats['alertmap'], sort_keys=True), orient='index')
-                    alertmaptable = alertmaptable.reindex(columns=['count', 'title', 'description'])
+                    alertmaptable = alertmaptable.reindex(columns=['title', 'count', 'description'])
+                    alertmaptable = alertmaptable[['count', 'description']]
                     blob = io.BytesIO()
                     alertmaptable.to_csv(blob)
                     blob.seek(0)
